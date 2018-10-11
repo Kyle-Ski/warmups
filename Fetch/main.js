@@ -11,6 +11,15 @@ function plainFetch() {
   });
 }
 
-plainFetch();
+// plainFetch();
+
+async function asyncFetch() {
+  const response = await fetch('https://www.reddit.com/r/boulder.json')
+  const json = await response.json()
+  return console.log(json.data.children[0]);
+  
+}
+
+asyncFetch();
 
 // How can we use async / await to rewrite the function above?
